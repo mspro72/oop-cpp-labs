@@ -1,6 +1,5 @@
 #include "array.h"
 
-// Constructor
 Array::Array(int startCapacity) {
     if (startCapacity <= 0)
         capacity = DEFAULT_CAPACITY;
@@ -10,12 +9,10 @@ Array::Array(int startCapacity) {
     size = 0;
 }
 
-// Destructor
 Array::~Array() {
     delete[] ptr;
 }
 
-// Copy constructor
 Array::Array(const Array& arr) {
     ptr = new int[arr.capacity];
     size = arr.size;
@@ -24,7 +21,6 @@ Array::Array(const Array& arr) {
         ptr[i] = arr.ptr[i];
 }
 
-// Assignment operator
 Array& Array::operator=(const Array& arr) {
     if (this == &arr)
         return *this;
@@ -39,7 +35,6 @@ Array& Array::operator=(const Array& arr) {
     return *this;
 }
 
-// Non-const index operator
 int& Array::operator[](int index) {
     if (index >= size || index < 0)
         throw ArrayException();
@@ -47,7 +42,6 @@ int& Array::operator[](int index) {
         return ptr[index];
 }
 
-// Const index operator
 int Array::operator[](int index) const {
     if (index >= size || index < 0)
         throw ArrayException();
@@ -55,7 +49,6 @@ int Array::operator[](int index) const {
         return ptr[index];
 }
 
-// Insert at index
 void Array::insert(int elem, int index) {
     if (index < 0 || index > size)
         throw ArrayException();
@@ -67,12 +60,10 @@ void Array::insert(int elem, int index) {
     ptr[index] = elem;
 }
 
-// Insert at end
 void Array::insert(int elem) {
     insert(elem, size);
 }
 
-// Remove by index
 void Array::remove(int index) {
     if (index < 0 || index >= size)
         throw ArrayException();
@@ -82,12 +73,10 @@ void Array::remove(int index) {
     size--;
 }
 
-// Get size
 int Array::getSize() const {
     return size;
 }
 
-// Increase capacity (private)
 void Array::increaseCapacity(int newCapacity) {
     capacity = newCapacity < capacity * 2 ? capacity * 2 : newCapacity;
     int* newPtr = new int[capacity];
@@ -97,7 +86,6 @@ void Array::increaseCapacity(int newCapacity) {
     ptr = newPtr;
 }
 
-// Output operator
 ostream& operator<<(ostream& out, const Array& arr) {
     out << "Total size: " << arr.size << endl;
     for (int i = 0; i < arr.size; i++)
