@@ -6,8 +6,8 @@ data = np.genfromtxt('results.csv', delimiter=',', skip_header=1)
 n = data[:, 0]
 t = data[:, 1]
 
-coeffs = np.polyfit(n**2, t, 1)
-t_fit = coeffs[0] * n**2 + coeffs[1]
+coeffs = np.polyfit(n**2 + n, t, 1)
+t_fit = coeffs[0] * (n**2 + n) + coeffs[1] 
 
 SMOOTH = 10
 t_smooth = uniform_filter1d(t, size=SMOOTH)

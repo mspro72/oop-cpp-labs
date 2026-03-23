@@ -21,7 +21,7 @@ int main(void) {
     ofstream csv("results.csv");
     csv << "n,time_sec" << endl;
 
-    // Phase 1: from 1000 to 100000, step 1000
+    // Часть 1
     for (int n = 1000; n <= 100000; n += 1000) {
         clock_t start = clock();
         int result = Joseb(n, 2);
@@ -32,8 +32,8 @@ int main(void) {
         csv << n << "," << elapsed << endl;
     }
 
-    // Phase 2: from 120000 to 1280000, step 20000
-    for (int n = 110000; n <= 1280000; n += 10000) {
+    // Часть 2
+    for (int n = 110000; n <= 1000000; n += 10000) {
         clock_t start = clock();
         int result = Joseb(n, 2);
         double elapsed = (double)(clock() - start) / CLOCKS_PER_SEC;
