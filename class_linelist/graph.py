@@ -6,8 +6,8 @@ data = np.genfromtxt('benchmark.csv', delimiter=',', skip_header=1)
 n = data[:, 0]
 t = data[:, 1]
 
-coeffs = np.polyfit(n**2, t, 1)
-t_fit = coeffs[0] * (n**2) + coeffs[1] 
+coeffs = np.polyfit(n, t, 1)
+t_fit = coeffs[0] * (n + coeffs[1] )
 
 SMOOTH = 10
 t_smooth = uniform_filter1d(t, size=SMOOTH)
@@ -20,7 +20,7 @@ ax.scatter(n, t, color='steelblue', s=15)
 ax.plot(n, t_smooth, color='green', linewidth=2, label=f'Сглаженный (Сглаживание={SMOOTH})')
 ax.scatter(n, t_smooth, color='green', s=15)
 
-ax.plot(n, t_fit, color='tomato', linewidth=2, linestyle='--', label='O(n²) аппроксимация')
+ax.plot(n, t_fit, color='tomato', linewidth=2, linestyle='--', label='O(n) аппроксимация')
 
 ax.set_xlabel('n', fontsize=13)
 ax.set_ylabel('Время (сек)', fontsize=13)
