@@ -85,5 +85,14 @@ int main() {
     cout << "\nДата Пасхи в 2126 году" << endl;
     DateTime easter2126 = EasterSunday(2126);
     cout << "Пасха 2126: " << easter2126 << endl;
+    int weekday = easter2126.dayOfWeek();
+    if (weekday == 0) cout << "Пасха 2126 приходится на воскресенье" << endl;
+    else if (weekday == 1) cout << "Пасха 2126 приходится на понедельник" << endl;
+    else if (weekday == 2) cout << "Пасха 2126 приходится на вторник" << endl;
+    else if (weekday == 3) cout << "Пасха 2126 приходится на среду" << endl;
+    else if (weekday == 4) cout << "Пасха 2126 приходится на четверг" << endl;
+    else if (weekday == 5) cout << "Пасха 2126 приходится на пятницу" << endl;
+    else if (weekday == 6) cout << "Пасха 2126 приходится на субботу" << endl;
+
     return 0;
 }
