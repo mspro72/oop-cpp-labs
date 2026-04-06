@@ -1,0 +1,9 @@
+n=13      | Answer: 13     | Time: 1 ms
+n=100     | Answer: 73     | Time: 1 ms
+n=1000    | Answer: 977    | Time: 1 ms
+n=5000    | Answer: 1809   | Time: 2 ms
+n=10000   | Answer: 3617   | Time: 3 ms
+n=50000   | Answer: 34465  | Time: 11 ms
+n=100000  | Answer: 68929  | Time: 24 ms
+n=500000  | Answer: 475713 | Time: 101 ms
+n=1000000 | Answer: 951425 | Time: 211 ms
