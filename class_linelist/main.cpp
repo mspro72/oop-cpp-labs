@@ -1,6 +1,6 @@
 #include <iostream>
 #include <locale.h>
-#include <windows.h> // Ошибка кодировки в консоли Windows возникла
+#include <windows.h>
 #include "linelist.h"
 using namespace std;
 
