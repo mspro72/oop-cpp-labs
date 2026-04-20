@@ -13,6 +13,7 @@ public:
     Rational();
     Rational(int n);
     Rational(int n, int d);
+    Rational(Rational n, Rational d);
 
     Rational& operator+=(const Rational& r);
     Rational& operator-=(const Rational& r);

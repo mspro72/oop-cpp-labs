@@ -16,6 +16,12 @@ Rational::Rational(int n, int d) {
     simplify();
 }
 
+Rational::Rational(Rational n, Rational d) {
+    num = n.num * d.den;
+    den = n.den * d.num;
+    simplify();
+}
+
 void Rational::simplify() {
     int a = num;
     int b = den;
