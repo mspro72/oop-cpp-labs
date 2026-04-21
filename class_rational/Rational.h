@@ -20,10 +20,20 @@ public:
     Rational& operator*=(const Rational& r);
     Rational& operator/=(const Rational& r);
 
+	Rational& operator+=(const int& n) const;
+	Rational& operator-=(const int& n) const;
+	Rational& operator*=(const int& n) const;
+	Rational& operator/=(const int& n) const;
+
     Rational operator+(const Rational& r) const;
     Rational operator-(const Rational& r) const;
     Rational operator*(const Rational& r) const;
     Rational operator/(const Rational& r) const;
+
+	Rational operator+(const int& n) const;
+	Rational operator-(const int& n) const;
+	Rational operator*(const int& n) const;
+    Rational operator/(const int& n) const;
 
     Rational operator-() const;
 

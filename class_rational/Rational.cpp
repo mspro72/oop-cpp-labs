@@ -46,6 +46,25 @@ Rational Rational::operator+(const Rational& r) const {
     return R += r;
 }
 
+Rational Rational::operator+(const int& n) const {
+    Rational R(*this);
+    return R += Rational(n);
+}
+
+Rational Rational::operator-(const int& n) const {
+    Rational R(*this);
+    return R -= Rational(n);
+}
+
+Rational Rational::operator*(const int& n) const {
+    Rational R(*this);
+    return R *= Rational(n);
+}
+
+Rational Rational::operator/(const int& n) const {
+    Rational R(*this);
+    return R /= Rational(n);
+}
 Rational Rational::operator-() const {
     Rational r(-num, den);
     return r;
@@ -93,6 +112,22 @@ Rational Rational::operator++(int) {
     Rational r(*this);
     num += den;
     return r;
+}
+
+Rational& Rational::operator+=(const int& n) const {
+    return (*this += Rational(n));
+}
+
+Rational& Rational::operator-=(const int& n) const {
+    return (*this -= Rational(n));
+}
+
+Rational& Rational::operator*=(const int& n) const {
+    return (*this *= Rational(n));
+}
+
+Rational& Rational::operator/=(const int& n) const {
+    return (*this /= Rational(n));
 }
 
 bool Rational::operator==(const Rational& r) const {
