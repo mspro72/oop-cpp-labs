@@ -81,7 +81,7 @@ int main()
 	cout << endl;
 
 
-	Rational a(1), b(-1, 21), c(-2, 21);
+	Rational a(1), b(-, 21), c(-2, 21);
 	Rational Zero;
 
 	if (a == Zero) {
